@@ -1,0 +1,274 @@
+﻿<Window x:Class="TurboNasirator3000.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TurboNasirator3000"
+        mc:Ignorable="d"
+        Title="Турбо Насиратор 3000" 
+        Height="450" Width="800"
+        MinHeight="450" MinWidth="800"
+        ResizeMode="CanMinimize">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="23"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="ProcessesTexts">
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="23"/>
+            <Setter Property="MinHeight" Value="25"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontSize" Value="23"/>
+        </Style>
+        <Style TargetType="TabControl">
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="2"/>
+        </Style>
+        <Style TargetType="TabItem">
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <StackPanel HorizontalAlignment="Center">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="1" Margin="15" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center">
+                Турбо насиратор 3000
+                </TextBlock>
+                <Button Padding="5" Content="Что это?" Grid.Column="2" Name="WhatIsIt" FontSize="18" Click="WhatIsIt_Click" HorizontalAlignment="Right"/>
+            </Grid>
+            <TabControl MinWidth="760">
+                <TabItem Header="Создание">
+                    <StackPanel>
+                        <StackPanel Margin="5">
+                            <TextBlock>
+                                Путь к начальной папке
+                            </TextBlock>
+                            <TextBox Name="StartPathCreate"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="5">
+                            <StackPanel>
+                                <TextBlock>
+                                    Глубина вложенных папок
+                                </TextBlock>
+                                <TextBox Name="DeepFolders" TextChanged="DeepFolders_TextChanged"/>
+                            </StackPanel>
+                            <TextBlock VerticalAlignment="Center" Margin="5">×</TextBlock>
+                            <StackPanel>
+                                <TextBlock>
+                                    Количество папок в папке
+                                </TextBlock>
+                                <TextBox Name="FoldersInFolder" TextChanged="FoldersInFolder_TextChanged"/>
+                            </StackPanel>
+                            <TextBlock VerticalAlignment="Center" Margin="5">=</TextBlock>
+                            <StackPanel>
+                                <TextBlock>
+                                    Всего папок
+                                </TextBlock>
+                                <TextBox MaxWidth="128" Name="AllFolders" IsEnabled="False" />
+                            </StackPanel>
+                        </StackPanel>
+
+                        <Button Content="Начать" Name="StartCreate" Click="StartCreate_Click"/>
+                        <StackPanel Margin="5" MinWidth="700" HorizontalAlignment="Center">
+                            <Grid Margin="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="7*"/>
+                                    <ColumnDefinition Width="14*"/>
+                                    <ColumnDefinition Width="6*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Style="{StaticResource ProcessesTexts}">
+                                    1. Подготовка путей
+                                </TextBlock>
+                                <ProgressBar Name="FirstBarCreate" Grid.Column="1"/>
+                                <TextBlock Name="FirstBlockCreate" Grid.Column="2" Style="{StaticResource ProcessesTexts}" HorizontalAlignment="Right">
+                                    В процессе (100%)
+                                </TextBlock>
+                            </Grid>
+                            <Grid Margin="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="7*"/>
+                                    <ColumnDefinition Width="14*"/>
+                                    <ColumnDefinition Width="6*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Style="{StaticResource ProcessesTexts}">
+                                    2. Создание папок
+                                </TextBlock>
+                                <ProgressBar Name="SecondBarCreate" Grid.Column="1"/>
+                                <TextBlock Name="SecondBlockCreate" Style="{StaticResource ProcessesTexts}" Grid.Column="2" HorizontalAlignment="Right">
+                                    Выполнено!
+                                </TextBlock>
+                            </Grid>
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Удаление">
+                    <StackPanel Margin="5">
+                        <StackPanel Margin="5">
+                            <TextBlock>
+                                Путь к начальной папке
+                            </TextBlock>
+                            <TextBox Name="StartPathDelete"/>
+                        </StackPanel>
+                        <Button Content="Начать" Name="StartDelete" Click="StartDelete_Click"/>
+                        <StackPanel Margin="5" MinWidth="700" HorizontalAlignment="Center">
+                            <Grid Margin="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="7*"/>
+                                    <ColumnDefinition Width="14*"/>
+                                    <ColumnDefinition Width="6*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Style="{StaticResource ProcessesTexts}">
+                                    1. Подготовка путей
+                                </TextBlock>
+                                <ProgressBar Name="FirstBarDelete" Grid.Column="1"/>
+                                <TextBlock Name="FirstBlockDelete" Grid.Column="2" Style="{StaticResource ProcessesTexts}" HorizontalAlignment="Right">
+                                    В процессе (100%)
+                                </TextBlock>
+                            </Grid>
+                            <TextBlock x:Name="DeleteFoldersCount" Style="{StaticResource ProcessesTexts}" Height="0">Папок найдено: 2000</TextBlock>
+                            <Grid Margin="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="7*"/>
+                                    <ColumnDefinition Width="14*"/>
+                                    <ColumnDefinition Width="6*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Style="{StaticResource ProcessesTexts}">
+                                    2. Удаление папок
+                                </TextBlock>
+                                <ProgressBar Name="SecondBarDelete" Grid.Column="1"/>
+                                <TextBlock Name="SecondBlockDelete" Style="{StaticResource ProcessesTexts}" Grid.Column="2" HorizontalAlignment="Right">
+                                    Выполнено!
+                                </TextBlock>
+                            </Grid>
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Упаковка">
+                    <StackPanel Margin="5">
+                        <StackPanel Margin="5">
+                            <TextBlock>
+                                Путь к начальной папке
+                            </TextBlock>
+                            <TextBox Name="StartPathPack"/>
+                        </StackPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Margin="5">
+                                <Grid Margin="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="11*"/>
+                                        <ColumnDefinition Width="24*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock>
+                                    Путь к данным
+                                    </TextBlock>
+                                    <TextBox Grid.Column="1" Name="IncludedDirectorty"/>
+                                </Grid>
+                                <Grid Margin="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="11*"/>
+                                        <ColumnDefinition Width="18*"/>
+                                        <ColumnDefinition Width="6*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock>
+                                    Ключ
+                                    </TextBlock>
+                                    <TextBox Name="KeyBoxPack" Grid.Column="1"/>
+                                    <Button Padding="0" Grid.Column="2" FontSize="12" Content="Сегенрировать" Name="GenerateKeyButton" Height="23" Margin="5,5,5,0" VerticalAlignment="Top" Click="GenerateKey_Click"/>
+                                </Grid>
+                            </StackPanel>
+                            <Button Grid.Column="1" Content="Что такое ключ?" FontSize="18" Click="KeyButton_Click"/>
+                        </Grid>
+                        <Button Content="Начать" Name="StartPack" Click="StartPack_Click"/>
+                        <StackPanel Margin="5" MinWidth="700" HorizontalAlignment="Center">
+                            <Grid Margin="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="7*"/>
+                                    <ColumnDefinition Width="14*"/>
+                                    <ColumnDefinition Width="6*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Style="{StaticResource ProcessesTexts}">
+                                    Упаковка данных
+                                </TextBlock>
+                                <ProgressBar Name="BarPack" Grid.Column="1"/>
+                                <TextBlock Name="BlockPack" Grid.Column="2" Style="{StaticResource ProcessesTexts}" HorizontalAlignment="Right">
+                                    Не начато
+                                </TextBlock>
+                            </Grid>
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Распаковка">
+                    <StackPanel Margin="5">
+                        <StackPanel Margin="5">
+                            <TextBlock>
+                                Путь к начальной папке
+                            </TextBlock>
+                            <TextBox Name="StartPathUnpack"/>
+                        </StackPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Margin="5">
+                                <Grid Margin="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="11*"/>
+                                        <ColumnDefinition Width="24*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock>
+                                        Путь распаковки
+                                    </TextBlock>
+                                    <TextBox Grid.Column="1" Name="UnpackDirectorty"/>
+                                </Grid>
+                                <Grid Margin="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="11*"/>
+                                        <ColumnDefinition Width="24*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock>
+                                        Ключ
+                                    </TextBlock>
+                                    <TextBox Name="KeyBoxUnpack" Grid.Column="1"/>
+                                </Grid>
+                            </StackPanel>
+                            <Button Grid.Column="1" Content="Что такое ключ?" FontSize="18" Click="KeyButton_Click"/>
+                        </Grid>
+                        <Button Content="Начать" Name="StartUnpack" Click="StartUnpack_Click"/>
+                        <StackPanel Margin="5" MinWidth="700" HorizontalAlignment="Center">
+                            <Grid Margin="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="7*"/>
+                                    <ColumnDefinition Width="14*"/>
+                                    <ColumnDefinition Width="6*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Style="{StaticResource ProcessesTexts}">
+                                    Распаковка данных
+                                </TextBlock>
+                                <ProgressBar Name="BarUnpack" Grid.Column="1"/>
+                                <TextBlock Name="BlockUncap" Grid.Column="2" Style="{StaticResource ProcessesTexts}" HorizontalAlignment="Right">
+                                    Не начато
+                                </TextBlock>
+                            </Grid>
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+            </TabControl>
+        </StackPanel>
+    </Grid>
+</Window>
