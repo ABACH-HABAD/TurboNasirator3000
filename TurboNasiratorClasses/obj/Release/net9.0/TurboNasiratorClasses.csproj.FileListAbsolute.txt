@@ -1,0 +1,22 @@
+C:\Users\peter\Desktop\TurboNasirator3000\TurboNasiratorClasses\bin\Release\net9.0\TurboNasiratorClasses.deps.json
+C:\Users\peter\Desktop\TurboNasirator3000\TurboNasiratorClasses\bin\Release\net9.0\TurboNasiratorClasses.dll
+C:\Users\peter\Desktop\TurboNasirator3000\TurboNasiratorClasses\bin\Release\net9.0\TurboNasiratorClasses.pdb
+C:\Users\peter\Desktop\TurboNasirator3000\TurboNasiratorClasses\obj\Release\net9.0\TurboNasiratorClasses.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\peter\Desktop\TurboNasirator3000\TurboNasiratorClasses\obj\Release\net9.0\TurboNasiratorClasses.AssemblyInfoInputs.cache
+C:\Users\peter\Desktop\TurboNasirator3000\TurboNasiratorClasses\obj\Release\net9.0\TurboNasiratorClasses.AssemblyInfo.cs
+C:\Users\peter\Desktop\TurboNasirator3000\TurboNasiratorClasses\obj\Release\net9.0\TurboNasiratorClasses.csproj.CoreCompileInputs.cache
+C:\Users\peter\Desktop\TurboNasirator3000\TurboNasiratorClasses\obj\Release\net9.0\TurboNasiratorClasses.dll
+C:\Users\peter\Desktop\TurboNasirator3000\TurboNasiratorClasses\obj\Release\net9.0\refint\TurboNasiratorClasses.dll
+C:\Users\peter\Desktop\TurboNasirator3000\TurboNasiratorClasses\obj\Release\net9.0\TurboNasiratorClasses.pdb
+C:\Users\peter\Desktop\TurboNasirator3000\TurboNasiratorClasses\obj\Release\net9.0\ref\TurboNasiratorClasses.dll
+C:\Users\peter\Desktop\TurboNasirator3000\Исходный код\TurboNasiratorClasses\bin\Release\net9.0\TurboNasiratorClasses.deps.json
+C:\Users\peter\Desktop\TurboNasirator3000\Исходный код\TurboNasiratorClasses\bin\Release\net9.0\TurboNasiratorClasses.dll
+C:\Users\peter\Desktop\TurboNasirator3000\Исходный код\TurboNasiratorClasses\bin\Release\net9.0\TurboNasiratorClasses.pdb
+C:\Users\peter\Desktop\TurboNasirator3000\Исходный код\TurboNasiratorClasses\obj\Release\net9.0\TurboNasiratorClasses.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\peter\Desktop\TurboNasirator3000\Исходный код\TurboNasiratorClasses\obj\Release\net9.0\TurboNasiratorClasses.AssemblyInfoInputs.cache
+C:\Users\peter\Desktop\TurboNasirator3000\Исходный код\TurboNasiratorClasses\obj\Release\net9.0\TurboNasiratorClasses.AssemblyInfo.cs
+C:\Users\peter\Desktop\TurboNasirator3000\Исходный код\TurboNasiratorClasses\obj\Release\net9.0\TurboNasiratorClasses.csproj.CoreCompileInputs.cache
+C:\Users\peter\Desktop\TurboNasirator3000\Исходный код\TurboNasiratorClasses\obj\Release\net9.0\TurboNasiratorClasses.dll
+C:\Users\peter\Desktop\TurboNasirator3000\Исходный код\TurboNasiratorClasses\obj\Release\net9.0\refint\TurboNasiratorClasses.dll
+C:\Users\peter\Desktop\TurboNasirator3000\Исходный код\TurboNasiratorClasses\obj\Release\net9.0\TurboNasiratorClasses.pdb
+C:\Users\peter\Desktop\TurboNasirator3000\Исходный код\TurboNasiratorClasses\obj\Release\net9.0\ref\TurboNasiratorClasses.dll
